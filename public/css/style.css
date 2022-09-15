@@ -2,15 +2,20 @@
     background: #cbe2ec;
 }
 main{
-    height: 90vh;
+    height: 84vh;
     background: #e1f0f7;
-}
-.avatar{
-    height: 250px;
-    width: 250px;
-    /* border: 1px solid #000000; */
 }
 .avt{
     height: 300px;
     width: 300px;
+}
+.side{
+    border-right: 3px solid #cbe2ec;
+}
+.side input{
+    width: 100%;
+    background: #cbe2ec;
+}
+.right{
+    /* border: 1px solid red; */
 }

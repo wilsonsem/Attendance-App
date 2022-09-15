@@ -16,48 +16,60 @@
             </div>
             <div >
                 <!-- <img src="./img/NA.png"  alt="" class=> -->
+                <h1 class="ml-auto">LOGOUT</h1>
             </div>
         </div>
     </nav>
    <main>
-        <div class="container">
-            <!-- <div class="row pt-5"> -->
-                <div class="d-flex justify-content-center pt-4">
-                    <div class="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 pt-3 side">
+                    <h2 class="text-center">RECORD</h2>
+                    <input class="col btn-lg mt-1 form-control" type="button" value="OLDER">
+                    <input class="col btn-lg mt-1" type="button" value="MAY">
+                    <input class="col btn-lg mt-1" type="button" value="JUNE">
+                    <input class="col btn-lg mt-1" type="button" value="JULY">
+                    <input class="col btn-lg mt-1" type="button" value="AUGUST">
+                </div>
+                <div class="col-md-10 right">
+                    <div class="d-flex justify-content-center pt-2 ">
                         <div class="">
-                            <h3 class="text-center">ROLL No: 01</h3>
-                            <img class="img-fluid rounded-circle avt" src="./img/avatar.png" alt="Profile Picture">
-                        </div>
-                        <div >
-                            <h3 class="text-center">SEMMWA WILSON</h3>
-                            <div class="d-flex justify-content-center pt-2">
-                                <div>
-                                    <button type="button" class="btn btn-success btn-lg m-1" data-toggle="modal" data-target="#myModal">PRESENT</button>
+                            <div class="">
+                                <h3 class="text-center">ROLL No: 01</h3>
+                                <img class="img-fluid rounded-circle avt" src="./img/avatar.png" alt="Profile Picture">
+                            </div>
+                            <div >
+                                <h3 class="text-center">SEMMWA WILSON</h3>
+                                <div class="d-flex justify-content-center pt-2">
+                                    <div>
+                                        <button type="button" class="btn btn-success btn-lg m-1" data-toggle="modal" data-target="#myModal">PRESENT</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-danger btn-lg m-1" data-toggle="modal" data-target="#myModal">ABSENT</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-warning btn-lg m-1" data-toggle="modal" data-target="#myModal">SICK</button>
+                                    </div>
                                 </div>
-                                <div>
-                                    <button type="button" class="btn btn-danger btn-lg m-1" data-toggle="modal" data-target="#myModal">ABSENT</button>
+                            </div>
+                            <div class="modal" id="myModal" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <!-- <div class="modal-header">
+                                    </div> -->
+                                    <!-- Modal body -->
+                                    <div class="modal-body text-center">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <!-- <h4 class="modal-title">Modal Heading</h4> -->
+                                    <h5 class="text-success">Response submitted successfully</h5>
+                                    <!-- <button type="button" class="btn btn-danger text-center" data-dismiss="modal">Close</button> -->
+                                    </div>
                                 </div>
-                                <div>
-                                    <button type="button" class="btn btn-warning btn-lg m-1" data-toggle="modal" data-target="#myModal">SICK</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal" id="myModal" tabindex="-1" role="dialog">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                <!-- Modal Header -->
-                                <!-- <div class="modal-header">
-                                </div> -->
-                                <!-- Modal body -->
-                                <div class="modal-body text-center">
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <!-- <h4 class="modal-title">Modal Heading</h4> -->
-                                  <h5 class="text-success">Response submitted successfully</h5>
-                                  <!-- <button type="button" class="btn btn-danger text-center" data-dismiss="modal">Close</button> -->
-                                </div>
-                              </div>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
