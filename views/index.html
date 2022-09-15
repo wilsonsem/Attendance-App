@@ -7,41 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./js/bootstrap.min.js">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="text-dark d-flex justify-content-end">
+    <nav class="navbar navbar-custom navbar-expand-lg">
+        <div class="text-dark d-flex justify-content-between">
             <div class="">
                 <a class="navbar-brand" href="index.html"><img src="./img/RWL.png" alt=""></a>
             </div>
             <div >
-                <img src="./img/NA.png"  alt="" class=>
+                <!-- <img src="./img/NA.png"  alt="" class=> -->
             </div>
         </div>
     </nav>
    <main>
         <div class="container">
-            <div class="pt-5">
-                <div class="text-center">
-                    <div>
-                        <img class="img-fluid" src="./img/avatar.png" alt="Profile Picture">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div>
-                            <button class="btn btn-success btn-lg m-1">CHECK IN</button>
+            <!-- <div class="row pt-5"> -->
+                <div class="d-flex justify-content-center pt-4">
+                    <div class="">
+                        <div class="">
+                            <h3 class="text-center">ROLL No: 01</h3>
+                            <img class="img-fluid rounded-circle avt" src="./img/avatar.png" alt="Profile Picture">
                         </div>
-                        <div>
-                            <button class="btn btn-danger btn-lg m-1">ABSENT</button>
+                        <div >
+                            <h3 class="text-center">SEMMWA WILSON</h3>
+                            <div class="d-flex justify-content-center pt-2">
+                                <div>
+                                    <button type="button" class="btn btn-success btn-lg m-1" data-toggle="modal" data-target="#myModal">PRESENT</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-danger btn-lg m-1" data-toggle="modal" data-target="#myModal">ABSENT</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-warning btn-lg m-1" data-toggle="modal" data-target="#myModal">SICK</button>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <button class="btn btn-warning btn-lg m-1">SICK</button>
+                        <div class="modal" id="myModal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <!-- Modal Header -->
+                                <!-- <div class="modal-header">
+                                </div> -->
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <!-- <h4 class="modal-title">Modal Heading</h4> -->
+                                  <h5 class="text-success">Response submitted successfully</h5>
+                                  <!-- <button type="button" class="btn btn-danger text-center" data-dismiss="modal">Close</button> -->
+                                </div>
+                              </div>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
     <script src="main.js"></script>
+    <script src="./jquery/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
