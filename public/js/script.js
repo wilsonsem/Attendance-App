@@ -1,4 +1,6 @@
 let presentButton = document.querySelector('#present')
+let absentButton  = document.querySelector('#absent')
+let sickButton    = document.querySelector('#sick')
 let display       = document.querySelector('#display')
 
 presentButton.addEventListener('click', async ()=> { 
@@ -18,8 +20,8 @@ presentButton.addEventListener('click', async ()=> {
 
                 const data = {
                     status: 'present',
-                    date:   '',
-                    browser: ''
+                    date:   '2022-09-17',
+                    browser: navigator.vendor
                 }
             
                 const setting = {
@@ -49,5 +51,35 @@ presentButton.addEventListener('click', async ()=> {
       }  
   })
 
+absentButton.addEventListener('click', async () => {
 
+    let getStatus = async () => {
+
+        const data = {
+            status: 'absent',
+            browser: navigator.vendor
+        }
+    
+        const setting = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+    
+        try {
+            
+            const fetchResponse = await fetch(`http://localhost:8008/api/user/123/attendance`, setting)
+            const response = await fetchResponse.json()
+            return console.log(response);
+    
+        } catch (error) {
+            return error       
+        }
+    }
+    return getStatus()
+
+})
 

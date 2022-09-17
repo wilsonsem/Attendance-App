@@ -7,15 +7,15 @@ exports.getAttendancePage = (req, res) => {
 exports.markAttandance = (req, res) => {
     let details = {
 
-        student_id: req.body.student_id,
+        student_id: 1,
         status:     req.body.status,
         date:       req.body.date,
         browser:    req.body.browser,
-        ip_address: req.body.ip_address 
+        ip_address: req.socket.remoteAddress 
 
     }
 
-    sql.query(`INSERT INTO attendance(student_id, status, date, browser, ip_address) VALUES(${details.student_id}, '${details.status}', '${details.date}', '${details.browser}', '${details.ip_address}')`, (err, data) => {
+    sql.query(`INSERT INTO attendance(student_id, status, browser, ip_address) VALUES(${details.student_id}, '${details.status}', '${details.browser}', '${details.ip_address}')`, (err, data) => {
                 if(err){
                     res.json(err)
                 }
@@ -31,6 +31,13 @@ exports.getDailyAttendanceRecords = (req, res) => {
         res.json(data)
     })
 
+}
+
+exports.getAttendanceByDate = (req, res) => {
+
+    sql.query(`SELECT * FROM attendance WHERE date = ${req.body.date}`, (err, data) => {
+
+    })
 }
 
 module.exports = exports
