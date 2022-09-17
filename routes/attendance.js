@@ -1,9 +1,10 @@
 let express = require('express'),
-    router  = express.Router()
+    router  = express.Router(),
+    controller = require('../controllers/attendance')
 
 router.route('/')
-    .get()
-    .post()
+    .get(controller.getDailyAttendanceRecords)
+    .post(controller.markAttandance)
 
 router.route('/:id')
     .get()

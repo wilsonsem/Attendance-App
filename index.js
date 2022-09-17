@@ -3,7 +3,8 @@ require('dotenv').config()
 let express = require('express'),
     app     = express(),
     bodyParser  = require('body-parser'),
-    attendanceRoute = require('./routes/attendance')
+    attendanceRoute = require('./routes/attendance'),
+    attendance      = require('./models/attendance')
 
 // setting view engine
 app.set("view engine", "ejs")
@@ -13,13 +14,11 @@ app.set("view engine", "ejs")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-
-app.use('/api/user/:id/attendance', attendanceRoute)
-
 // Accessing static files
 app.use(express.static(__dirname + "/views"))
 app.use(express.static(__dirname + "/public"))
 
+app.use('/api/user/:id/attendance', attendanceRoute)
 
 
 app.get('/', (req, res) => {
