@@ -28,7 +28,7 @@ exports.markAttandance = (req, res) => {
 exports.getDailyAttendanceRecords = (req, res) => {
 
     sql.query('SELECT * FROM attendance', (err, data) => {
-        res.json(data)
+        res.render('',{data: data})
     })
 
 }
