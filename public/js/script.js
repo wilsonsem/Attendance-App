@@ -1,7 +1,7 @@
 let presentButton = document.querySelector('#present')
 let absentButton  = document.querySelector('#absent')
 let sickButton    = document.querySelector('#sick')
-let display       = document.querySelector('#display')
+let display       = document.querySelector('#myModal')
 
 presentButton.addEventListener('click', async ()=> { 
 

@@ -20,7 +20,7 @@ exports.registerUser = async (req, res) => {
     }
 
     let alreadyexist = await sql.query(`SELECT * FROM students WHERE email = ${body.email}`)
-    let response = await alreadyexist
+    let response = await alreadyexist.json()
 
     if(response){
         res.status(401).render('', {message: 'An acct has already been created with this email'})
@@ -29,7 +29,7 @@ exports.registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const password = await bcrypt.hash(body.password, salt) 
 
-    let registered = sql.query(`INSERT INTO students(email, password) VALUES ('${body.email}', '${body, password}')`, (err, data) => {
+    let registered = sql.query(`INSERT INTO students(email, password) VALUES ('${body.email}', '${password}')`, (err, data) => {
         try {
             res.render('', { data: data, message: 'welcome dear user, we hope you have a great experience with us' })
         }
@@ -55,7 +55,21 @@ exports.loginUser = async (req, res) => {
     }
 
     let user = await sql.query(`SELECT * FROM students WHERE email = '${body.email}'`)
+    let response = await user.json()
 
+    if(response){
+        const validpassword = await bcrypt.compare(body.password, response.password)
+
+        if(validpassword) {
+            res.render('', {message: 'welcomr back dear user'})
+        }
+        else{
+            res.render('', {message: 'the password you provided is invalid'})
+        }
+    }
+    else{
+        res.render('', {message: 'the email you provided does not exist please ccreate an account'})
+    }
 }
 
 module.exports = exports
