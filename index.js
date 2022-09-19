@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/dashboard', (req, res) =>{
+    res.render('dashboard')
+})
+
 // server connection
 app.listen(process.env.PORT, () => {
     console.log(`Attendance-app is listening on ${process.env.PORT}`)
